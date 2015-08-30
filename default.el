@@ -1,21 +1,31 @@
 ;;;; this is the emacs config file
 
-;;(if (display-graphic-p)(load-file "~/.emacs.d/addons.el/e-color-theme.el"))
 ;;evil
-;;(setq evil-want-C-u-scroll t)
-;;(require 'evil)
-;;(evil-mode 1)
+(add-to-list 'load-path "~/.emacs.d/elpa/evil-20150830.57")
+(add-to-list 'load-path "~/.emacs.d/elpa/goto-chg-20131228.659")
+(add-to-list 'load-path "~/.emacs.d/elpa/undo-tree-20140509.522")
+(setq evil-want-C-u-scroll t)
+(require 'evil)
+(evil-mode 1)
 
-;;auto complete
-;;(add-to-list 'load-path "~/.emacs.d/elpa/auto-complete-20150618.1949")
-;;(require 'auto-complete)
-;;(require 'auto-complete-config)
-;;(add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-20150618.1949/dict")
-;;(ac-config-default)
+;;auto-complete
+(add-to-list 'load-path "~/.emacs.d/elpa/popup-20150626.711")
+(add-to-list 'load-path "~/.emacs.d/elpa/auto-complete-20150618.1949")
+(require 'auto-complete)
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-20150618.1949/dict")
+(ac-config-default)
+
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
 
 ;;magit
-;;(add-to-list 'load-path "~/.emacs.d/elpa/elap/magit-20150826.1244")
-;;(require 'magit)
+(add-to-list 'load-path "~/.emacs.d/elpa/dash-20150829.433")
+(add-to-list 'load-path "~/.emacs.d/elpa/magit-popup-20150824.1010")
+(add-to-list 'load-path "~/.emacs.d/elpa/git-commit-20150824.1010")
+(add-to-list 'load-path "~/.emacs.d/elpa/with-editor-20150829.516")
+(add-to-list 'load-path "~/.emacs.d/elpa/magit-20150830.544")
+(require 'magit)
 
 ;;key bind
 (define-prefix-command 'master-sense-map)
